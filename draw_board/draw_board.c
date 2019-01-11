@@ -13,29 +13,38 @@ int main(void)
 
 int draw_board(void)
 {
-    int num_rows = 5;
-    int num_cols = 5;
+    int num_rows = 4;
+    int num_cols = 4;
 
-    for (int row = 1; row < num_rows; row++)
+    for (int row = 0; row <= num_rows; row++)
     {
-        for (int col = 1; col < num_cols; col++)
+        for (int col = 0; col <= num_cols; col++)
         {
-            if (row % 2 != 0 && row != 0)
-            {
-                printf("-");
-            }
-            else if (col % 2 != 0 && col != 0)
-            {
-                printf("+");
-            }
-            else
+            printf(" ");
+
+            if (col % 2 == 0 && row % 2 == 0)
             {
                 printf(" ");
             }
+
+            if (col % 2 != 0 && row % 2 == 0)
+            {
+                printf("|");
+            }
+
+            if (row % 2 != 0 && col % 2 != 0)
+            {
+                printf("+");
+            }
+
+            if (row % 2 != 0 && col % 2 == 0)
+            {
+                printf("-");
+            }
         }
         printf("\n");
+        //printf("\n");
     }
-
     return 0;
 }
 
